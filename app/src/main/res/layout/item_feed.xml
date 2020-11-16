@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="feedItem"
+            type="com.example.sarang.data.model.Feed" />
+
+        <variable
+            name="myInfo"
+            type="com.example.sarang.data.model.User" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="422dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_profile"
+                circleImageUri="@{feedItem.author.profileUri}"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/chairman" />
+
+            <TextView
+                android:id="@+id/textView_profile_name"
+                style="@style/BaseTextView"
+                android:layout_marginStart="12dp"
+                android:text="@{feedItem.author.name}"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_profile"
+                app:layout_constraintStart_toEndOf="@+id/imageView_profile"
+                app:layout_constraintTop_toTopOf="@+id/imageView_profile"
+                tools:text="이경우" />
+
+            <ImageButton
+                android:id="@+id/imageBtn_more_vert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_more_vert_black_40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView_profile" />
+
+            <ImageView
+                android:id="@+id/imageView_feed"
+                imageUri="@{feedItem.thumbnailUri}"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ababab"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_profile" />
+
+
+            <ImageButton
+                android:id="@+id/imageBtn_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_recommend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_feed" />
+
+            <ImageButton
+                android:id="@+id/imageBtn_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_bookmark"
+                app:layout_constraintEnd_toStartOf="@id/imageBtn_recommend"
+                app:layout_constraintTop_toBottomOf="@id/imageView_feed" />
+
+            <ImageButton
+                android:id="@+id/imageBtn_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_comment"
+                app:layout_constraintEnd_toStartOf="@id/imageBtn_bookmark"
+                app:layout_constraintTop_toBottomOf="@id/imageView_feed" />
+
+            <ImageButton
+                android:id="@+id/imageBtn_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_thumb_up"
+                app:layout_constraintEnd_toStartOf="@id/imageBtn_comment"
+                app:layout_constraintTop_toBottomOf="@id/imageView_feed" />
+
+
+            <TextView
+                android:id="@+id/textView_feed_title"
+                style="@style/BaseTextView"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="3dp"
+                android:text="@{feedItem.title}"
+                app:layout_constraintStart_toStartOf="@id/imageView_profile"
+                app:layout_constraintTop_toBottomOf="@+id/imageBtn_bookmark"
+                tools:text="조선판 인디아나 존스 추사 김정희" />
+
+            <TextView
+                android:id="@+id/textView_feed_content"
+                style="@style/BaseTextView"
+                android:textStyle="normal"
+                android:layout_height="28dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@{feedItem.content}"
+                app:layout_constraintBottom_toTopOf="@id/imageView_profile_mine"
+                app:layout_constraintStart_toStartOf="@id/textView_feed_title"
+                app:layout_constraintTop_toBottomOf="@+id/textView_feed_title"
+                tools:text="조선판 '인디아나 존스' 추사 김정희가 찾아낸 희대의 보물" />
+
+            <ImageView
+                android:id="@+id/imageView_profile_mine"
+                circleImageUri="@{myInfo.profileUri}"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@id/textView_feed_time_after_publish"
+                app:layout_constraintStart_toStartOf="@id/textView_feed_title"
+                app:srcCompat="@drawable/chairman" />
+
+            <EditText
+                android:id="@+id/editText_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="댓글 달기"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_profile_mine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView_profile_mine"
+                app:layout_constraintTop_toTopOf="@+id/imageView_profile_mine" />
+
+            <TextView
+                android:id="@+id/textView_feed_time_after_publish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                android:text="12분 전"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

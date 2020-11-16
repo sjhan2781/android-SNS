@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="feed"
+            type="com.example.sarang.data.model.Feed" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/rounded_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                tools:src="@drawable/loading"
+                imageUri="@{feed.thumbnailUri}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/imageView_bookmark_profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginBottom="7dp"
+                tools:src="@drawable/chairman"
+                circleImageUri="@{feed.author.profileUri}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rounded_imageView"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView_bookmark_title"
+                style="@style/BaseTextView"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="10dp"
+                android:text="@{feed.title}"
+                app:layout_constraintStart_toEndOf="@id/imageView_bookmark_profile"
+                app:layout_constraintTop_toTopOf="@id/imageView_bookmark_profile"
+                tools:text="스파르타 300의 진실" />
+
+            <TextView
+                android:id="@+id/textView_bookmark_content"
+                style="@style/BaseTextView"
+                android:text="@{feed.content}"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/textView_bookmark_title"
+                app:layout_constraintTop_toBottomOf="@id/textView_bookmark_title"
+                tools:text="멜론무스크뉴스" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView_bookmark_published_time"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="@{bookmark.time}"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/textView_bookmark_content"-->
+<!--                app:layout_constraintStart_toEndOf="@id/textView_bookmark_content"-->
+<!--                app:layout_constraintTop_toTopOf="@id/textView_bookmark_content"-->
+<!--                tools:text="20.10.16" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

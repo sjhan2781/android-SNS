@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/containerBackgroundColor"
+        tools:context=".ui.mypage.MyPage1Fragment">
+
+        <com.example.sarang.custom.RoundImageView
+            android:id="@+id/imageView_mypage_profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/chairman"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_mypage_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="이경우"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/textView_mypage_profile"
+            app:layout_constraintStart_toEndOf="@id/imageView_mypage_profile_image"
+            app:layout_constraintTop_toTopOf="@id/imageView_mypage_profile_image"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="이경우" />
+
+        <TextView
+            android:id="@+id/textView_mypage_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프로필"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_mypage_profile_image"
+            app:layout_constraintStart_toStartOf="@id/textView_mypage_name"
+            app:layout_constraintTop_toBottomOf="@id/textView_mypage_name"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="프로필" />
+
+        <ImageButton
+            android:id="@+id/imageBtn_mypage_settings"
+            android:layout_width="@dimen/mypage_imageButton_size"
+            android:layout_height="@dimen/mypage_imageButton_size"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings_primary_24dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_mypage_profile_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageView_mypage_profile_image" />
+
+        <Button
+            android:id="@+id/btn_mypage_following"
+            android:layout_marginTop="10dp"
+            android:text="팔로잉"
+            app:layout_constraintEnd_toStartOf="@id/btn_mypage_message"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/imageView_mypage_profile_image"
+            app:layout_constraintTop_toBottomOf="@id/imageView_mypage_profile_image"
+            style="@style/StartRoundedButton"
+            tools:text="팔로잉" />
+
+        <Button
+            android:id="@+id/btn_mypage_message"
+            android:text="메시지"
+            style="@style/GroupedButton"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_mypage_browse"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/btn_mypage_following"
+            app:layout_constraintTop_toTopOf="@id/btn_mypage_following"
+            app:layout_constraintBottom_toBottomOf="@id/btn_mypage_following"
+            tools:text="메시지" />
+
+        <Button
+            android:id="@+id/btn_mypage_browse"
+            android:text="둘러보기"
+            app:layout_constraintEnd_toEndOf="@id/imageBtn_mypage_settings"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/btn_mypage_message"
+            app:layout_constraintTop_toTopOf="@id/btn_mypage_following"
+            app:layout_constraintBottom_toBottomOf="@id/btn_mypage_following"
+            style="@style/EndRoundedButton"
+            tools:text="둘러보기" />
+
+
+
+        <GridView
+            android:id="@+id/grid_mypage_feed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="@dimen/gridView_spacing"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/gridView_spacing"
+            android:horizontalSpacing="@dimen/gridView_spacing"
+            android:clipToPadding="false"
+            android:gravity="center"
+            tools:listitem="@android:layout/simple_gallery_item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_mypage_following" />
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView_mypage_feed"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_marginBottom="@dimen/gridView_spacing"-->
+<!--            android:numColumns="3"-->
+<!--            android:columnWidth="150dp"-->
+<!--            android:verticalSpacing="@dimen/gridView_spacing"-->
+<!--            android:horizontalSpacing="@dimen/gridView_spacing"-->
+<!--            android:clipToPadding="false"-->
+<!--            tools:listitem="@android:layout/simple_gallery_item"-->
+<!--            android:orientation="vertical"-->
+<!--            app:spanCount="3"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/btn_mypage_following" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

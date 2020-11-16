@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu_home">
+
+    <fragment
+        android:id="@+id/menu_home"
+        android:name="com.example.sarang.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_bottomSheet"
+            app:destination="@+id/bottomSheet" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_bookmark"
+        android:name="com.example.sarang.ui.bookmark.BookmarkFragment"
+        android:label="보관함"
+        tools:layout="@layout/fragment_bookmark">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_new_feed1"
+        android:name="com.example.sarang.ui.new_feed.NewFeed1Fragment"
+        android:label="새 게시물"
+        tools:layout="@layout/fragment_new_feed1">
+        <action
+            android:id="@+id/action_menu_new_feed1_to_newFeed2Fragment"
+            app:destination="@id/newFeed2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_news"
+        android:name="com.example.sarang.ui.news.NewsFragment"
+        android:label="새소식"
+        tools:layout="@layout/fragment_news">
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_mypage"
+        android:name="com.example.sarang.ui.mypage.MyPage1Fragment"
+        android:label="마이페이지"
+        tools:layout="@layout/fragment_mypage1">
+        <action
+            android:id="@+id/action_menu_mypage_to_settingFragment"
+            app:destination="@id/mypage2Fragment" />
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/bottomSheet"
+        android:name="com.example.sarang.ui.recommend.RecommendFragment"
+        tools:layout="@layout/fragment_recommend">
+        <argument
+            android:name="myInfo"
+            app:argType="com.example.koreanologysns.data.model.User" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/newFeed2Fragment"
+        android:name="com.example.sarang.ui.new_feed.NewFeed2Fragment"
+        android:label="새게시물"
+        tools:layout="@layout/fragment_new_feed2" >
+
+        <argument
+            android:name="selectedImage"
+            app:argType="android.graphics.Bitmap"
+            app:nullable="true"/>
+        <argument
+            android:name="imageUri"
+            app:argType="android.net.Uri"
+            app:nullable="true"/>
+
+        <action
+            android:id="@+id/action_newFeed2Fragment_to_menu_home"
+            app:destination="@id/menu_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mypage2Fragment"
+        android:name="com.example.sarang.ui.mypage.MyPage2Fragment"
+        android:label="마이페이지"
+        tools:layout="@layout/fragment_mypage2" />
+
+
+</navigation>

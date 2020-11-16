@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">#ffffff</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- 툴바 네비게이션 아이콘 색 변경 -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <!-- 툴바 네비게이션 아이콘 색 변경 -->
+
+    </style>
+
+    <style name="BaseTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/brownish_grey</item>
+    </style>
+
+    <style name="BaseButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/brownish_grey</item>
+        <item name="android:backgroundTint">#ffffff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="RoundedButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/rounded</item>
+    </style>
+
+    <style name="RoundedOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="background">@drawable/rounded</item>
+        <item name="cornerRadius">150dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="GroupedButton" parent="BaseButton">
+        <item name="android:layout_marginStart">1dp</item>
+        <item name="android:layout_marginEnd">1dp</item>
+    </style>
+
+    <style name="StartRoundedButton" parent="GroupedButton">
+        <item name="shapeAppearance">@style/StartRounded</item>
+    </style>
+
+    <style name="EndRoundedButton" parent="GroupedButton">
+        <item name="shapeAppearance">@style/EndRounded</item>
+    </style>
+
+    <style name="StartRounded">
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomLeft">8dp</item>
+
+    </style>
+    <style name="EndRounded">
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+    </style>
+</resources>

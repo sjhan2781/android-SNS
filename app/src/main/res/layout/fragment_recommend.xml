@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myInfo"
+            type="com.example.sarang.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="13dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="17dp"
+        >
+
+        <ImageView
+            android:id="@+id/recommend_imageView_profile"
+            circleImageUri="@{myInfo.profileUri}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/chairman" />
+
+        <TextView
+            android:id="@+id/recommend_textView_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@{myInfo.name}"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/recommend_imageView_profile"
+            app:layout_constraintStart_toEndOf="@+id/recommend_imageView_profile"
+            app:layout_constraintTop_toTopOf="@+id/recommend_imageView_profile"
+            tools:text="이경우" />
+
+        <Button
+            android:id="@+id/recommend_button_recommend_all"
+            style="@style/RoundedOutlineButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="전체 추천"
+            app:layout_constraintBottom_toBottomOf="@+id/recommend_imageView_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recommend_imageView_profile" />
+
+
+        <EditText
+            android:id="@+id/recommend_editText_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rounded"
+            android:drawableStart="@drawable/ic_search_recommend"
+            android:drawableEnd="@drawable/ic_add_recommend"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommend_imageView_profile" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommend_recyclerView_recommend_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:maxHeight="300dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommend_editText_search"
+            tools:listitem="@layout/item_recommend" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,31 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="gridView_spacing">3dp</dimen>
+    <dimen name="recyclerView_news_spacing">5dp</dimen>
+
+
+<!--    마이페이지 1    -->
+    <dimen name="mypage_imageButton_size">20dp</dimen>
+<!--    마이페이지 1    -->
+
+
+<!--    마이페이지 2    -->
+    <dimen name="mypage2_profile_size">60dp</dimen>
+    <dimen name="mypage2_profile_marginBottom">133dp</dimen>
+    <dimen name="mypage2_name_marginBottom">101dp</dimen>
+    <dimen name="mypage2_info_marginBottom">77dp</dimen>
+    <dimen name="mypage2_imageButton_size">16dp</dimen>
+
+    <dimen name="mypage2_button_text_size">14sp</dimen>
+    <dimen name="mypage2_button_marginBottom">27dp</dimen>
+
+    <dimen name="mypage2_groupHeight">240dp</dimen>
+    <dimen name="mypage2_groupMarginTop">299dp</dimen>
+    <dimen name="mypage2_groupMarginBottom">101dp</dimen>
+    <dimen name="mypage2_groupPaddingTop">21dp</dimen>
+    <dimen name="mypage2_groupPaddingStart">24dp</dimen>
+
+<!--    마이페이지 2    -->
+</resources>

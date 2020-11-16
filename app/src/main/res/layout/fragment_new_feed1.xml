@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="newFeedViewModel"
+            type="com.example.sarang.ui.new_feed.viewmodel.NewFeedViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.new_feed.NewFeed1Fragment">
+
+    <ImageView
+        android:id="@+id/imageView_new_feed_selected"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        tools:src="@drawable/loading"
+        app:imageUri="@{newFeedViewModel.selectedUri}"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gridView_new_feed_gallary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <GridView
+        android:id="@+id/gridView_new_feed_gallary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/gridView_spacing"
+        android:layout_marginBottom="@dimen/gridView_spacing"
+        android:choiceMode="singleChoice"
+        android:clipToPadding="false"
+        android:horizontalSpacing="@dimen/gridView_spacing"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/gridView_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView_new_feed_selected"
+        app:layout_constraintVertical_weight="1"
+        tools:listitem="@android:layout/simple_gallery_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

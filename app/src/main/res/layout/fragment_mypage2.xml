@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/containerBackgroundColor"
+        tools:context=".ui.mypage.MyPage2Fragment">
+
+        <com.example.sarang.custom.RoundImageView
+            android:id="@+id/imageView_settings_profile_image"
+            android:layout_width="@dimen/mypage2_profile_size"
+            android:layout_height="@dimen/mypage2_profile_size"
+            android:src="@drawable/chairman"
+            android:layout_marginBottom="@dimen/mypage2_profile_marginBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_group" />
+
+        <ImageButton
+            android:id="@+id/imageBtn_settings_settings"
+            android:layout_width="@dimen/mypage2_imageButton_size"
+            android:layout_height="@dimen/mypage2_imageButton_size"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings_primary_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_settings_profile_image"
+            app:layout_constraintEnd_toEndOf="@id/imageView_settings_profile_image"/>
+
+        <TextView
+            android:id="@+id/textView_settings_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이경우"
+            android:textSize="16sp"
+            android:textColor="@color/brownish_grey"
+            android:layout_marginBottom="@dimen/mypage2_name_marginBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_group" />
+
+        <TextView
+            android:id="@+id/textView_settings_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brownish_grey"
+            android:text="프로필 소개란"
+            android:layout_marginBottom="@dimen/mypage2_info_marginBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_group" />
+
+
+        <Button
+            android:id="@+id/btn_settings_following"
+            style="@style/StartRoundedButton"
+            android:layout_marginBottom="@dimen/mypage2_button_marginBottom"
+            android:textStyle="bold"
+            android:text="팔로잉"
+            app:layout_constraintEnd_toStartOf="@id/btn_settings_follower"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_group" />
+
+        <Button
+            android:id="@+id/btn_settings_follower"
+            style="@style/EndRoundedButton"
+            android:textStyle="bold"
+            android:text="팔로워"
+            app:layout_constraintBottom_toBottomOf="@id/btn_settings_following"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/btn_settings_following"
+            app:layout_constraintTop_toTopOf="@id/btn_settings_following" />
+
+
+
+
+<!--        <Space-->
+<!--            android:id="@+id/top_space_btn_group"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/mypage2_groupPaddingTop"-->
+<!--            android:layout_marginTop="@dimen/mypage2_groupMarginTop"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/btn_settings_following"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+        <View
+            android:id="@+id/view_group"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mypage2_groupHeight"
+            android:layout_marginTop="@dimen/mypage2_groupMarginTop"
+            android:layout_marginBottom="@dimen/mypage2_groupMarginBottom"
+            android:background="#ffffff"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        
+        <TextView
+            android:id="@+id/textView_settings_modify_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mypage2_groupPaddingTop"
+            android:layout_marginStart="@dimen/mypage2_groupPaddingStart"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="개인정보 수정"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view_group" />
+
+        <TextView
+            android:id="@+id/textView_settings_payment_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="결제 내역"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_settings_modify_info"
+            app:layout_constraintTop_toBottomOf="@id/textView_settings_modify_info" />
+
+        <TextView
+            android:id="@+id/textView_settings_terms_and_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="약관 및 개인 정보 보호 정책"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_settings_modify_info"
+            app:layout_constraintTop_toBottomOf="@id/textView_settings_payment_history" />
+
+        <TextView
+            android:id="@+id/textView_settings_CS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="고객 지원"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_settings_modify_info"
+            app:layout_constraintTop_toBottomOf="@id/textView_settings_terms_and_policy" />
+
+        <TextView
+            android:id="@+id/textView_settings_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="로그아웃"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_settings_modify_info"
+            app:layout_constraintTop_toBottomOf="@id/textView_settings_CS" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
